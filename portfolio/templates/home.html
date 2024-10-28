@@ -1,0 +1,22 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+{% load static %}
+
+<img src="{% static 'portfolio/profile.jpg' %}" alt=""
+
+<h1>HOME</h1>
+
+{% for project in projects %}
+
+<h2>{{project.title}}</h2>
+<img src="{{project.image.url}}" alt="">
+
+    {% if project.url%}
+    <a href="{{project.url}}">{{project.url}}</a>
+    {% endif %}
+
+{%endfor%}
+
+{% endblock %}
